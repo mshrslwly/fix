@@ -1,0 +1,114 @@
+{
+  "entities": {
+    "Santri": {
+      "title": "Santri",
+      "description": "Data santri pesantren",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "nama": { "type": "string" },
+        "kelas": { "type": "string" },
+        "alamat": { "type": "string" },
+        "namaWali": { "type": "string" },
+        "noHpWali": { "type": "string" },
+        "kodeAkses": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["nama", "kelas", "kodeAkses"]
+    },
+    "Peraturan": {
+      "title": "Peraturan",
+      "description": "Tata tertib dan sanksi pesantren",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "kode": { "type": "string" },
+        "nama": { "type": "string" },
+        "sanksi": { "type": "string" },
+        "kategori": { "type": "string" },
+        "keterangan": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["kode", "nama", "sanksi"]
+    },
+    "Pelanggaran": {
+      "title": "Pelanggaran",
+      "description": "Catatan pelanggaran santri",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "santriId": { "type": "string" },
+        "santriNama": { "type": "string" },
+        "peraturanId": { "type": "string" },
+        "tanggal": { "type": "string" },
+        "keterangan": { "type": "string" },
+        "sanksi": { "type": "string" },
+        "statusSanksi": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["santriId", "peraturanId", "tanggal", "statusSanksi"]
+    },
+    "Perizinan": {
+      "title": "Perizinan",
+      "description": "Catatan perizinan santri",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "santriId": { "type": "string" },
+        "santriNama": { "type": "string" },
+        "jenis": { "type": "string" },
+        "tanggalMulai": { "type": "string" },
+        "tanggalSelesai": { "type": "string" },
+        "alasan": { "type": "string" },
+        "catatanTambahan": { "type": "string" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["santriId", "jenis", "tanggalMulai", "tanggalSelesai", "status"]
+    },
+    "PortalWali": {
+      "title": "PortalWali",
+      "description": "Snapshot data portal wali santri",
+      "type": "object",
+      "properties": {
+        "kodeAkses": { "type": "string" },
+        "santriId": { "type": "string" },
+        "nama": { "type": "string" },
+        "kelas": { "type": "string" },
+        "alamat": { "type": "string" },
+        "namaWali": { "type": "string" },
+        "noHpWali": { "type": "string" },
+        "perizinan": { "type": "array" },
+        "pelanggaran": { "type": "array" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["kodeAkses", "santriId", "nama"]
+    }
+  },
+  "firestore": {
+    "/santri/{santriId}": {
+      "schema": "Santri",
+      "description": "Koleksi data santri"
+    },
+    "/peraturan/{peraturanId}": {
+      "schema": "Peraturan",
+      "description": "Koleksi tata tertib dan sanksi"
+    },
+    "/pelanggaran/{pelanggaranId}": {
+      "schema": "Pelanggaran",
+      "description": "Koleksi catatan pelanggaran santri"
+    },
+    "/perizinan/{perizinanId}": {
+      "schema": "Perizinan",
+      "description": "Koleksi perizinan santri"
+    },
+    "/portalWali/{kodeAkses}": {
+      "schema": "PortalWali",
+      "description": "Snapshot dokumen untuk portal wali santri"
+    }
+  }
+}

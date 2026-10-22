@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>SiPontren - Sistem Manajemen Santri & Portal Wali</title>
+    <meta name="description" content="Sistem manajemen santri pesantren sederhana dan modern dengan pencatatan perizinan, tata tertib & sanksi, dan portal wali santri berbasis tautan pribadi & QR code." />
+    <meta property="og:title" content="SiPontren - Sistem Manajemen Santri & Portal Wali" />
+    <meta property="og:description" content="Sistem manajemen santri pesantren sederhana dan modern dengan pencatatan perizinan, tata tertib & sanksi, dan portal wali santri berbasis tautan pribadi & QR code." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+      // Early suppression of Vite HMR WebSocket connection errors in container environment
+      (function() {
+        function isWsError(e) {
+          if (!e) return false;
+          var msg = String((e && e.message) || (e && e.reason) || e);
+          return msg.indexOf('WebSocket') !== -1 || msg.indexOf('websocket') !== -1;
+        }
+        window.addEventListener('unhandledrejection', function(event) {
+          if (isWsError(event.reason)) {
+            event.preventDefault();
+            if (typeof event.stopImmediatePropagation === 'function') {
+              event.stopImmediatePropagation();
+            }
+          }
+        }, true);
+        window.addEventListener('error', function(event) {
+          if (isWsError(event.error) || isWsError(event.message)) {
+            event.preventDefault();
+            if (typeof event.stopImmediatePropagation === 'function') {
+              event.stopImmediatePropagation();
+            }
+          }
+        }, true);
+      })();
+    </script>
+  </head>
+  <body class="bg-[#FBF5EA] text-[#2C2925] antialiased selection:bg-[#5F8F6B] selection:text-white transition-colors duration-200">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

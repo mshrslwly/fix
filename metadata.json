@@ -1,0 +1,6 @@
+{
+  "name": "SiPontren - Sistem Manajemen Santri & Portal Wali",
+  "description": "Sistem manajemen santri pesantren sederhana dan modern dengan pencatatan perizinan, tata tertib & sanksi, dan portal wali santri berbasis tautan pribadi & QR code.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
